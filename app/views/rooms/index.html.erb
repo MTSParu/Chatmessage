@@ -25,7 +25,8 @@
       <%= render @messages %>
       </div>
       <%= render partial: 'layouts/new_message_form' %>
-      <h4 class="text-center"> <%= @single_room.name %> </h4>
+      <h4 class="text-center"> <%= @user&.username || @single_room.name %> </h4>
+      <%= link_to 'Sign Out', signout_path,  :method => :delete %>
     <% end %>
   </div>
 
